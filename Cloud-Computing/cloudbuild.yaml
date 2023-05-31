@@ -1,0 +1,11 @@
+steps:
+  # Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/YOUR_PROJECT_ID/stunting-api', '.']
+
+  # Push the Docker image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/YOUR_PROJECT_ID/stunting-api']
+
+images:
+  - 'gcr.io/YOUR_PROJECT_ID/stunting-api'
